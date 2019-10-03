@@ -30,11 +30,17 @@ const Menu = ({history}) => (
         )}
         
         {isAuthenticated() && (
+            <Fragment>
+            <li className="nav-item">
+                <Link className="nav-link" style={isActive(history, '/signup')} to="/dashboard">Dashboard</Link>
+            </li>
+
             <li className="nav-item">
                 <Link className="nav-link" style={{cursor: "pointer", color: "#fff"}}  onClick={() => logout(() => {
                     history.push("/")
                 })} >Sign Out</Link>
             </li>
+            </Fragment>
         )}
         
     </ul>
